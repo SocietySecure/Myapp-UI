@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+           <title>Society Enrolment</title>
+
+    <style>
+    @import url('httpss://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+}
+
+.signup-form {
+    font-family: "Roboto", sans-serif;
+    width:650px;
+    margin:30px auto;
+    background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+    border-radius: 10px;
+}
+
+.form-header  {
+    background-color: #EFF0F1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.form-header h1 {
+    font-size: 30px;
+    text-align:center;
+    color:#666;
+    padding:20px 0;
+    border-bottom:1px solid #cccccc;
+}
+
+/*---------------------------------------*/
+/* Form Body */
+/*---------------------------------------*/
+.form-body {
+    padding:10px 40px;
+    color:#666;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-body .label-title {
+    color:#1BBA93;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.form-body .form-input {
+        font-size: 17px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 34px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #333333;
+        text-align: left;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        background: white;
+        outline: none;
+}
+
+
+
+.horizontal-group .left{
+    float:left;
+    width:49%;
+}
+
+.horizontal-group .right{
+    float:right;
+    width:49%;
+}
+
+input[type="file"] {
+ outline: none;
+ cursor:pointer;
+ font-size: 17px;
+}
+
+#range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+
+
+::-webkit-input-placeholder {
+ color:#d9d9d9;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.form-footer {
+ clear:both;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.signup-form .form-footer  {
+  background-color: #EFF0F1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding:10px 40px;
+  text-align: right;
+  border-top: 1px solid #cccccc;
+}
+
+.form-footer span {
+  float:left;
+  margin-top: 10px;
+  color:#999;
+  font-style: italic;
+  font-weight: thin;
+}
+
+.btn {
+   display:inline-block;
+   padding:10px 20px;
+   background-color: #1BBA93;
+   font-size:17px;
+   border:none;
+   border-radius:5px;
+   color:#bcf5e7;
+   cursor:pointer;
+}
+
+.btn:hover {
+  background-color: #169c7b;
+  color:white;
+}
+    </style>
+
+  <!-- Script for range input label -->
+        <script>
+            var rangeLabel = document.getElementById("range-label");
+            var experience = document.getElementById("experience");
+            function change() {
+            rangeLabel.innerText = experience.value + "K";
+            }
+        </script>  
+          <script
+          src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"></script>
+          <script type="text/javascript" src="../assets/js/society-enrollment.js"></script>
+        
+    </head>
+    <body>
+
+        <form class="signup-form" >
+
+    <!-- form header -->
+    <div class="form-header">
+            <h1>Society Enrolment</h1>
+    </div>
+
+    <!-- form body -->
+    <div class="form-body">
+            <!-- Firstname and Lastname -->
+        <div class="horizontal-group">
+                <div class="form-group left">
+                        <label for="firstname" class="label-title">First name 1*</label>
+                        <input type="text" id="firstname" name="firstname" class="form-input" placeholder="enter your first name" required="required" />
+                </div>
+                <div class="form-group right">
+                        <label for="lastname" class="label-title">Last name</label>
+                        <input type="text" id="lastname" name="lastname" class="form-input" placeholder="enter your last name" />
+                </div>
+        </div>
+
+                <!-- Email -->
+<div class="form-group">
+    <label for="email" class="label-title">Email</label>
+    <input type="email" id="email" name="email" class="form-input" placeholder="enter your email" required="required">
+</div>
+
+   <div class="form-group right">
+        <label class="label-title">Mobile*</label>
+        <div>
+              <input type="text" id="mobileno" name="mobileno" class="form-input" placeholder="Enter mobile no" />
+        </div>
+    </div>
+
+
+
+
+     <div class="form-group">
+    <label for="society" class="label-title">Society Name*</label>
+    <input type="society" id="societyName" name="societyName" class="form-input" placeholder="enter your society address" required="required">
+</div>
+
+<!-- Add -->
+<div class="form-group">
+  <label for="choose-file" class="label-title">Society Address*</label>
+  <textarea class="form-input" rows="4" cols="50" id ="societyAddress" style="height:auto"></textarea>
+
+</div>
+     <div class="horizontal-group">
+
+      <label class="label-title">Are you from Society Management:</label>
+
+            <label for="yes">
+                <input type="radio" name="isSocietyManagementTeam" value="true" id="yes" onclick="show1();"> Yes</label>
+            <label for="no">
+                <input type="radio" name="isSocietyManagementTeam" value="false" id="no" onclick="show2();" checked > No</label>
+
+    </div>
+    <br>
+
+  <div id="div1" class="hide" >
+
+  <label class="label-title"> Please share the Society Admin/Management Contact Number or email address.  </label>
+  <br><br>                <div class="horizontal-group">
+                  <div class="form-group left">
+ <label for="email" class="label-title">Email</label>
+    <input type="email" id="email" name="email" class="form-input" placeholder="enter your email" >
+                  </div>
+                      <div class="form-group right">
+        <label class="label-title">Contact No</label>
+
+    <input type="text" id="contactno" name="contactno" class="form-input" placeholder="Enter contact no" >
+                      </div>  </div>
+</div>
+
+   <br>
+ <div class="form-group">
+        <label class="label-title">Are you already registered to app:</label>
+
+            <label for="yes">
+                <input type="radio" name="bol" value="yes" id="yes"> Yes</label>
+            <label for="no">
+                <input type="radio" name="bol" value="no" id="no"> No</label>
+
+    </div>
+
+    
+
+  <div class="form-group" >
+    <label for="choose-file" class="label-title">Upload Document</label>
+    <input type="file" id="choose-file" size="80">
+  </div>
+
+              <!-- form footer -->
+    <div class="form-footer">
+        <span>* required</span>
+  <button class="btn" id="enrollmentSave">Save</button>
+  <button type="reset" class="btn">Reset</button>
+  <button type="button" onclick="history.back()" class="btn">Cancel</button>
+    </div>
+        </form>
+
+    </body>
+      <script>
+  function show1(){
+  document.getElementById('div1').style.display ='none';
+}
+function show2(){
+  document.getElementById('div1').style.display = 'block';
+}       </script>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Profile Page </title>
+	<style>
+	@import url('httpss://fonts.googleapis.com/css?family=Roboto');
+	body {
+		background: linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+	}
+	
+	.signup-form {
+		font-family: "Roboto", sans-serif;
+		width: 650px;
+		margin: 30px auto;
+		background: linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+		border-radius: 10px;
+	}
+	
+	.form-header {
+		background-color: #EFF0F1;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+	
+	.form-header h1 {
+		font-size: 30px;
+		text-align: center;
+		color: #666;
+		padding: 20px 0;
+		border-bottom: 1px solid #cccccc;
+	}
+	/*---------------------------------------*/
+	/* Form Body */
+	/*---------------------------------------*/
+	
+	.form-body {
+		padding: 10px 40px;
+		color: #666;
+	}
+	
+	.form-group {
+		margin-bottom: 20px;
+	}
+	
+	.form-body .label-title {
+		color: #1BBA93;
+		font-size: 17px;
+		font-weight: bold;
+	}
+	
+	.form-body .form-input {
+		font-size: 17px;
+		box-sizing: border-box;
+		width: 100%;
+		height: 34px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: #333333;
+		text-align: left;
+		border: 1px solid #d6d6d6;
+		border-radius: 4px;
+		background: white;
+		outline: none;
+	}
+	
+	.horizontal-group .left {
+		float: left;
+		width: 49%;
+	}
+	
+	.horizontal-group .right {
+		float: right;
+		width: 49%;
+	}
+	
+	input[type="file"] {
+		outline: none;
+		cursor: pointer;
+		font-size: 17px;
+	}
+	
+	#range-label {
+		width: 15%;
+		padding: 5px;
+		background-color: #1BBA93;
+		color: white;
+		border-radius: 5px;
+		font-size: 17px;
+		position: relative;
+		top: -8px;
+	}
+	
+	::-webkit-input-placeholder {
+		color: #d9d9d9;
+	}
+	/*---------------------------------------*/
+	/* Form Footer */
+	/*---------------------------------------*/
+	
+	.form-footer {
+		clear: both;
+	}
+	/*---------------------------------------*/
+	/* Form Footer */
+	/*---------------------------------------*/
+	
+	.signup-form .form-footer {
+		background-color: #EFF0F1;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		padding: 10px 40px;
+		text-align: right;
+		border-top: 1px solid #cccccc;
+	}
+	
+	.form-footer span {
+		float: left;
+		margin-top: 10px;
+		color: #999;
+		font-style: italic;
+		font-weight: thin;
+	}
+	
+	.btn {
+		display: inline-block;
+		padding: 10px 20px;
+		background-color: #1BBA93;
+		font-size: 17px;
+		border: none;
+		border-radius: 5px;
+		color: #bcf5e7;
+		cursor: pointer;
+	}
+	
+	.btn:hover {
+		background-color: #169c7b;
+		color: white;
+	}
+	</style>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <!-- <script src="../assets/js/jquery-3.5.1.min.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+
+	<script type="text/javascript" src="../assets/js/app-common.js"></script>
+  <script type="text/javascript" src="../assets/js/user-profile-edit.js"></script>
+  <script type="text/javascript" src="../assets/js/addressDropdownsPopulate.js"></script>
+	<!-- Script for range input label -->
+	<script>
+	var rangeLabel = document.getElementById("range-label");
+	var experience = document.getElementById("experience");
+
+	function change() {
+		rangeLabel.innerText = experience.value + "K";
+	}
+	</script>
+</head>
+
+<body>
+	<form class="signup-form" action="/register" method="post">
+		<!-- form header -->
+		<div class="form-header">
+			<h1>MyApp Profile Page</h1> </div>
+		<!-- form body -->
+		<div class="form-body">
+			<!-- Firstname and Lastname -->
+			<div class="horizontal-group">
+				<div class="form-group left">
+					<label for="firstname" class="label-title">First name *</label>
+					<input type="text" id="fname" class="form-input" required="required" /> </div>
+
+				<div class="form-group right">
+					<label for="lastname" class="label-title">Last name</label>
+					<input type="text" id="lname" class="form-input" placeholder="enter your last name" /> </div>
+      </div>
+      <div class="horizontal-group">
+				<div class="form-group center">
+					<label for="middlename" class="label-title">Middle name</label>
+          <input type="text" id="middleName" class="form-input" placeholder="enter your last name" /> </div>
+          <!-- Email 
+				<div class="form-group right">
+          <label for="email" class="label-title">Email*</label>
+          <input type="email" id="email" class="form-input" placeholder="enter your email" required="required"> </div>-->
+      </div>
+
+			<p></p>
+			<div class="horizontal-group">
+			<div class="form-group left" >
+				<label for="email" class="label-title">Email*</label>
+				<input type="email" id="email" class="form-input" placeholder="enter your email" required="required"> </div>
+			<!-- username -->
+			<div class="form-group right">
+				<label for="username" class="label-title">User Name</label>
+        <input type="text" id="Username" class="form-input" placeholder="enter your User Name" required="required"> </div>
+        
+    </div>
+    <div class="horizontal-group">
+			<div class="form-group left ">
+				<label for="dob" class="label-title">Date of Birth: </label>
+				<input type="text" id="dob" class="form-input" placeholder="enter your User Name" required="required"> </div>
+			<div class="form-group right">
+				<label for="age" class="label-title">Age</label>
+        <input type="text" id="age" class="form-input" placeholder="enter your User Name" required="required"> </div>
+        
+
+		</div>
+			<div class="form-group">
+				<label for="iddentification" class="label-title">iddentification: </label>
+				<input type="iddentification" id="iddentification" class="form-input" placeholder="enter your User Name" required="required"> </div>
+    
+    <div class="horizontal-group">
+        <div class="form-group left">
+				<label for="country" class="label-title">country:</label>
+				<select class="form-input"  id="countrySel"> </select>
+			</div>
+			<div class="form-group right" >
+				<label for="state" class="label-title">state:</label>
+				<select class="form-input" id="stateSel"> </select>
+      </div>
+    </div>
+    
+    <div class="horizontal-group">
+			<div class="form-group left">
+				<label for="district" class="label-title">district:</label>
+				<select class="form-input" id="districtSel"> </select>
+			</div>
+			<div class="form-group right">
+				<label for="city" class="label-title">City:</label>
+				<select class="form-input" id="citySel"> </select>
+      </div>
+    </div>
+
+			<div class="form-group">
+				<label for="address" class="label-title">address:</label>
+				<input type="text" id="address" class="form-input" placeholder="enter your User Name" required="required"> </div>
+			<div class="form-group">
+				<label for="phone" class="label-title">phone:</label>
+				<input type="text" id="phone" class="form-input" placeholder="enter your User Name" required="required"> </div>
+			<div class="form-group">
+				<label for="bloodgroup" class="label-title">bloodgroup:</label>
+				<input type="text" id="bloodgroup" class="form-input" placeholder="enter your User Name" required="required"> </div>
+			<div class="form-group">
+				<label for="timezone" class="label-title">timezone:</label>
+				<input type="text" id="timezone" class="form-input" placeholder="enter your User Name" required="required"> </div>
+			<div class="form-group">
+				<label for="pin" class="label-title">pin:</label>
+				<input type="text" id="pin" class="form-input" placeholder="enter your User Name" required="required"> </div>
+			<div class="form-group">
+				<label for="userGroup" class="label-title">userGroup:</label>
+				<input type="text" id="userGroup" class="form-input" placeholder="enter your User Name" required="required"> </div>
+			<input type="hidden" id="userId">
+			<!-- Passwrod and confirm password -->
+			<div class="horizontal-group">
+				<div class="form-group left">
+					<label for="password" class="label-title">Password *</label>
+					<input type="password" id="password" class="form-input" placeholder="enter your password" required="required"> </div>
+				<div class="form-group right">
+					<label for="confirm-password" class="label-title">Confirm Password *</label>
+					<input type="password" class="form-input" id="confirm-password" placeholder="enter your password again" required="required"> </div>
+      </div>
+      <div class="horizontal-group" id="message"> 
+        <div class="form-group center"> 
+          <label for="password" class="label-title">Provide details of atleast 1 iddentity Type *</label>
+        </div>
+      </div>
+
+			<!-- ID type 1 -->
+			<div class="horizontal-group">
+				<div class="form-group left">
+					<label for="password" class="label-title">Identity Type 1</label>
+					<select class="form-input" id="idType1">
+						<option value="panNumber">Pan Card</option>
+						<option value="aadharNumber"> Aadhaar Card</option>
+						<option value="dlNumber"> Driving Licence</option>
+						<option value="voterNumber"> Voter Card</option>
+						<option value="otNumber">Others</option>
+					</select>
+				</div>
+				<div class="form-group right">
+					<label for="id_no" class="label-title">ID No </label>
+					<input type="id" class="form-input" id="id_no1" placeholder="enter your ID No" required="required"> </div>
+			</div>
+			<!-- ID type 2 -->
+			<div class="horizontal-group">
+				<div class="form-group left">
+					<label for="password" class="label-title">Identity Type 2</label>
+					<select class="form-input" id="idType2">
+						<option value="panNumber">Pan Card</option>
+						<option value="aadharNumber"> Aadhaar Card</option>
+						<option value="dlNumber"> Driving Licence</option>
+						<option value="voterNumber"> Voter Card</option>
+						<option value="otNumber">Others</option>
+					</select>
+				</div>
+				<div class="form-group right">
+					<label for="id_no" class="label-title">ID No </label>
+					<input type="id" class="form-input" id="id_no2" placeholder="enter your ID No" required="required"> </div>
+			</div>
+			<!-- ID type 3 -->
+			<div class="horizontal-group">
+				<div class="form-group left">
+					<label for="password" class="label-title">Identity Type 3</label>
+					<select class="form-input" id="idType3">
+						<option value="panNumber">Pan Card</option>
+						<option value="aadharNumber"> Aadhaar Card</option>
+						<option value="dlNumber"> Driving Licence</option>
+						<option value="voterNumber"> Voter Card</option>
+						<option value="otNumber">Others</option>
+					</select>
+				</div>
+				<div class="form-group right">
+					<label for="id_no" class="label-title">ID No </label>
+					<input type="id" class="form-input" id="id_no3" placeholder="enter your ID No" required="required"> </div>
+			</div>
+			<!-- ID type 4 -->
+			<div class="horizontal-group">
+				<div class="form-group left">
+					<label for="password" class="label-title">Identity Type 4</label>
+					<select class="form-input" id="idType4">
+						<option value="panNumber">Pan Card</option>
+						<option value="aadharNumber"> Aadhaar Card</option>
+						<option value="dlNumber"> Driving Licence</option>
+						<option value="voterNumber"> Voter Card</option>
+						<option value="otNumber">Others</option>
+					</select>
+				</div>
+				<div class="form-group right">
+					<label for="id_no" class="label-title">ID No </label>
+					<input type="id" class="form-input" id="id_no4" placeholder="enter your ID No" required="required"> </div>
+			</div>
+			<!-- Gender and Hobbies -->
+			<div class="horizontal-group">
+				<div class="form-group left">
+          <label class="label-title">Gender:</label><br>
+          <label for="male">
+            <input type="radio" name="gender" value="male" id="gender"> Male</label>
+          <label for="female">
+            <input type="radio" name="gender" value="female" id="gender"> Female</label>
+          <label for="otherGen">
+            <input type="radio" name="gender" value="otherGen" id="gender"> Not to disclose</label>
+				</div>
+				<div class="form-group right">
+          <label class="label-title">Mobile: </label>
+          <input type="text" id="mobileno" class="form-input" placeholder="0987654321" /> 
+					</div>
+			</div>
+			<div class="horizontal-group">
+				<div class="form-group center">
+					
+				</div>
+			</div>
+
+			<!-- Add -->
+			<div class="form-group">
+				<label for="choose-file" class="label-title">Permanent Address</label>
+				<textarea class="form-input" rows="4" cols="50" style="height:auto"></textarea>
+				<label for="choose-file" class="label-title">Corresponding Address</label>
+				<textarea class="form-input" rows="4" cols="50" style="height:auto"></textarea>
+      </div>
+      
+      <div class="horizontal-group">
+				<div class="form-group left">
+					<label class="label-title">Source of Income</label>
+					<select class="form-input" id="sourceOfIncome">
+						<option value="B">Employed</option>
+						<option value="I">Self-employed</option>
+						<option value="A">Unemployed</option>
+					</select>
+				</div>
+				<div class="form-group right">
+					<label for="experience" class="label-title">Registration purpose: </label>
+					<!--  <input type="range" min="20" max="100" step="5"  value="0" id="experience" class="form-input" onChange="change();" style="height:28px;width:78%;padding:0;">
+    <span id="range-label">20K</span>  -->
+					<select class="form-input" id="purpose">
+						<option value="society">Society</option>
+						<option value="shop">Shops</option>
+						<option value="other">Others</option>
+						<option value="default" selected>Default</option>
+					</select>
+				</div>
+			</div>
+			<!-- Profile picture and Age -->
+			<div class="horizontal-group">
+				<div class="form-group left">
+					<label for="choose-file" class="label-title">Upload Profile Picture</label>
+					<input type="file" id="choose-file" size="80"> </div>
+				<div class="form-group right">
+					<label for="experience" class="label-title">Age</label>
+					<input type="number" min="18" max="80" value="18" class="form-input"> </div>
+			</div>
+			<div class="horizontal-group" id="message"> notification/message </div>
+		</div>
+		<!-- form footer -->
+		<div class="form-footer"> <span>* required</span>
+			<button class="btn" id="saveUser">Save</button>
+			<button type="reset" class="btn">Reset</button>
+			<button type="button" onclick="history.back()" class="btn">Cancel</button>
+		</div>
+	</form>
+</body>
+
+</html>
