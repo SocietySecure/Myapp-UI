@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 	 $.ajax({
-		url: "http://localhost:8080/societyenrollment",
+		url: "http://localhost:8080/society/getallenroll",
 		method: "POST",
 		dataType: 'json',
 		contentType: "application/json; charset=utf-8",

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+           <title>Neighbourhood Details  </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   		       <!--Jquery Link-->
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	
+	<!-- Bootstrap Styling-->
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function()
+
+    {
+	var x = 0; //Initial field counter
+	var list_maxField = 10; //Input fields increment limitation
+	
+        //Once add button is clicked
+	$('.list_add_button').click(function()
+	    {
+	    //Check maximum number of input fields
+	    if(x < list_maxField){ 
+	        x++; //Increment field counter
+	        //var list_fieldHTML = '<div class="row"><div class="col-xs-4 col-sm-4 col-md-4"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Type Item Name" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-7"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-1 col-sm-7 col-md-1"><a href="javascript:void(0);" class="list_remove_button btn btn-danger">-</a></div></div>'; //New input field html 
+			
+			var list_fieldHTML = '<div class="row"><div class="col-xs-3 col-sm-3 col-md-3"><div class="form-group"><select name="list[0][]" id="neighbourhoodtype" class="form-control"><option value="grocery">Grocery Shop</option><option value="veg">Vegetable Shop</option><option value="parlour">Saloon/Parlour</option><option value="variety">Variety Shop</option></select></div></div><div class="col-xs-3 col-sm-3 col-md-3"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Name" class="form-control"/></div></div><div class="col-xs-2 col-sm-2 col-md-2"><div class="form-group"><select name="list[0][]" id="pass" class="form-control"><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option></select></div></div><div class="col-xs-3 col-sm-3 col-md-3"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Mobile No" class="form-control"/></div></div><div class="col-xs-1 col-sm-1 col-md-1"><a href="javascript:void(0);" class="list_remove_button btn btn-danger">-</a></div></div>'; //New input field html 
+	        	       
+		   $('.list_wrapper').append(list_fieldHTML); //Add field html
+	    }
+        });
+    
+        //Once remove button is clicked
+        $('.list_wrapper').on('click', '.list_remove_button', function()
+        {
+           $(this).closest('div.row').remove(); //Remove field html
+           x--; //Decrement field counter
+        });
+});</script>
+
+    <style>
+	 .color-box {
+    /*border: 1px solid green ;
+    position: absolute;
+               /  text-align: justify;
+                /*  background-color: brown;
+                   word-wrap: break-word;
+                 margin: 10px 20px auto;
+    /* top, left, bottom
+    padding: 10px 20px 30px;
+    float: left;         */
+    text-align: justify;
+        max-width: 500px;
+    height: 100px;
+    background-color: powderblue;
+	border: 1px solid green
+	
+
+}
+    @import url('httpss://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+}
+
+.signup-form {
+    font-family: "Roboto", sans-serif;
+    width:650px;
+    margin:30px auto;
+    background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+    border-radius: 10px;
+}
+
+.form-header  {
+    background-color: #EFF0F1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.form-header h1 {
+    font-size: 30px;
+    text-align:center;
+    color:#666;
+    padding:20px 0;
+    border-bottom:1px solid #cccccc;
+}
+
+/*---------------------------------------*/
+/* Form Body */
+/*---------------------------------------*/
+.form-body {
+    padding:10px 40px;
+    color:#666;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-body .label-title {
+    color:#1BBA93;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.form-body .form-input {
+        font-size: 17px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 34px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #333333;
+        text-align: left;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        background: white;
+        outline: none;
+}
+
+
+
+.horizontal-group .left{
+    float:left;
+    width:49%;
+}
+
+.horizontal-group .right{
+    float:right;
+    width:49%;
+}
+
+input[type="file"] {
+ outline: none;
+ cursor:pointer;
+ font-size: 17px;
+}
+
+#range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+
+
+::-webkit-input-placeholder {
+ color:#d9d9d9;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.form-footer {
+ clear:both;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.signup-form .form-footer  {
+  background-color: #EFF0F1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding:10px 40px;
+  text-align: right;
+  border-top: 1px solid #cccccc;
+}
+
+.form-footer span {
+  float:left;
+  margin-top: 10px;
+  color:#999;
+  font-style: italic;
+  font-weight: thin;
+}
+
+.btn {
+   display:inline-block;
+   padding:10px 20px;
+   background-color: #1BBA93;
+   font-size:17px;
+   border:none;
+   border-radius:5px;
+   color:#bcf5e7;
+   cursor:pointer;
+}
+
+.btn:hover {
+  background-color: #169c7b;
+  color:white;
+}
+#box8 {
+            padding: 10px;
+            flex-grow: 1;
+            border: solid 1px black
+        }
+		
+/****************************************
+        VERSION ONE
+        
+        
+        .content{
+            display: grid;
+            max-width: 90%;
+            margin: 1rem auto;
+            border: 1px solid red;
+            grid-template-areas: "A A B B C C"
+                                "D D D E E E";
+            grid-column-gap: 2rem;
+        }
+        .content div{
+            padding: 1rem;
+        }
+        .A{
+            grid-area: A;
+            background-color: hsl(60, 30%, 90%);
+        }
+        .B{
+            grid-area: B;
+            background-color: hsl(120, 30%, 90%);
+        }
+                
+        .D{
+            grid-area: D;
+            background-color: hsl(240, 30%, 90%);
+        }
+        
+        ****************************************/
+        
+        /****************************************
+        VERSION TWO
+        ****************************************/
+        
+        .content{
+            display: grid;
+            max-width: 90%;
+            margin: 1rem auto;
+            border: 1px solid red;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: auto;
+            grid-column-gap: 2rem;
+        }
+        .content div{
+            padding: 1rem;
+        }
+        .A{
+            grid-column: 1 / span 4;
+            background-color: hsl(60, 30%, 90%);
+        }
+        .B{
+            grid-column: 5 / span 3;
+           
+        }
+       
+        
+        .D{
+            grid-column: 1 / span 6;
+            background-color: hsl(240, 30%, 90%);
+        }
+		
+    </style>
+        </head>
+    <body>
+
+        <form class="signup-form" action="/register" method="post">
+
+    <!-- form header -->
+    <div class="form-header">
+            <h1>Neighbourhood Details as per radius from Society</h1>
+    </div>
+
+       <!-- form body -->
+	   		<div class="form-body">
+
+   <center>
+<div class="horizontal-group">
+				<div class="form-group">
+				<label for="radius" class ="label-title"> Radius Filter:</label>
+                  <select name="radius" id="radius" >
+				   <option value="half">0.5 KM</option>
+                  <option value="one">1 KM</option>
+                  <option value="two">2 KM</option>
+				   <option value="three">3 KM</option>
+				    <option value="five">5 KM</option> 
+                  </select>
+</div>
+</div>
+</center>
+<main class="content">
+            <div class="third D">
+               
+             <label for="neighbourhood" class ="label-title"> Neighbourhood Type:</label>
+                  <select name="neighbourhood" id="neighbourhood" >
+                  <option value="grocery">Grocery Shop</option>
+                  <option value="veg">Vegetable Shop</option>
+				   <option value="parlour">Saloon/Parlour</option>
+                  <option value="variety">Variety Shop</option>
+				  <option value="cake">Cake Shop</option>
+				  <option value="gas">Gas Agency</option>
+				  <option value="maid">Mad Agency</option>
+				  <option value="plumber">Plumber Agency</option>
+                  </select>
+<br> <br>
+
+
+	<label for="neighbourhoodname" class ="label-title"> Neighbourhood Name:</label>
+                  <select name="neighbourhoodname" id="neighbourhoodname" >
+                  <option value="grocery">Ideal Fresh</option>
+                  <option value="veg">Chinama Shop</option>
+				 
+                  </select>
+<br><br>
+
+ <label for="passType" class ="label-title"> Pass Type:</label>
+                  <select name="passType" id="passType" >
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly </option>
+				  <option value="monthly">Monthly</option>
+				 
+                  </select>
+<br><br>
+<label class="label-title">Daily Validity Time:</label>
+<label for="time" id ="time">8:30 AM To 8:30PM</label>
+<br>
+</div>
+
+
+            
+  </main>
+
+
+<main class="content">
+            <div class="third D">
+               
+             <label for="neighbourhood" class ="label-title"> Neighbourhood Type:</label>
+                  <select name="neighbourhood" id="neighbourhood" >
+                  <option value="grocery">Grocery Shop</option>
+                  <option value="veg">Vegetable Shop</option>
+				   <option value="parlour">Saloon/Parlour</option>
+                  <option value="variety">Variety Shop</option>
+				  <option value="cake">Cake Shop</option>
+				  <option value="gas">Gas Agency</option>
+				  <option value="maid">Mad Agency</option>
+				  <option value="plumber">Plumber Agency</option>
+                  </select>
+<br> <br>
+
+
+	<label for="neighbourhoodname" class ="label-title"> Neighbourhood Name:</label>
+                  <select name="neighbourhoodname" id="neighbourhoodname" >
+                  <option value="grocery">Ideal Fresh</option>
+                  <option value="veg">Chinama Shop</option>
+				 
+                  </select>
+<br><br>
+
+ <label for="passType" class ="label-title"> Pass Type:</label>
+                  <select name="passType" id="passType" >
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly </option>
+				  <option value="monthly">Monthly</option>
+				 
+                  </select>
+<br><br>
+<label class="label-title">Daily Validity Time:</label>
+<label for="time" id ="time">8:30 AM To 8:30PM</label>
+<br>
+<center>
+
+</div>
+            
+  </main>
+  
+  
+  
+  <div class="panel panel-info">
+
+                    <div class="panel-heading text-center">
+                   
+                        <h1 class="panel-title">Add Manually</h1>
+                    </div>
+
+                    <div class="panel-body">
+                        <form role="form" method="post" action="">
+                            
+                            <div class="list_wrapper">  
+                                <div class="row">
+								
+								
+								<div class="col-xs-3 col-sm-3 col-md-3">
+
+                                        <div class="form-group">Neighbourhood Type
+                                           <label for="neighbourhoodtype" > </label>
+                                                                                       
+											<select name="list[0][]" id="neighbourhoodtype" class="form-control" >
+												<option value="grocery">Grocery Shop</option>
+												  <option value="veg">Vegetable Shop</option>
+												   <option value="parlour">Saloon/Parlour</option>
+												  <option value="variety">Variety Shop</option>
+												  <option value="cake">Cake Shop</option>
+												  <option value="gas">Gas Agency</option>
+												  <option value="maid">Mad Agency</option>
+												  <option value="plumber">Plumber Agency</option>
+																			  </select></div>
+                                    </div>
+									
+									
+
+                                    <div class="col-xs-3 col-sm-3 col-md-3">
+
+                                        <div class="form-group">
+                                            Neighbourhood Name
+                                            <input name="list[0][]" type="text" placeholder="Name" class="form-control"/>
+                                            
+                                        </div>
+                                    </div>
+									
+									
+									
+
+                                    <div class="col-xs-2 col-sm-2 col-md-2">
+                                        <div class="form-group">Pass Type
+                                             <label for="pass" >   </label>
+                                                                                       
+											<select name="list[0][]" id="pass" class="form-control" >
+											   	  <option value="daily">Daily</option>
+												  <option value="weekly">Weekly </option>
+												  <option value="monthly">Monthly</option>
+											 
+											  </select></div>
+                                    </div> 
+
+									<div class="col-xs-3 col-sm-3 col-md-3">
+                                        <div class="form-group">
+                                            Mobile <br>  Number
+                                            <input autocomplete="off" name="list[0][]" type="text" placeholder="Mobile Number" class="form-control"/>
+                                        </div>
+                                    </div> 
+									
+                                    <div class="col-xs-1 col-sm-1 col-md-1">
+                                        <br>
+                                       <button class="btn btn-primary list_add_button" type="button">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--<input type="submit" value="Submit" class="btn btn-info btn-block"> -->
+                        </form>
+                    </div>
+                </div>
+ 
+
+
+    <!-- form footer -->
+    <div class="form-footer">
+	<center>
+     <button type="cancel" class="btn">Cancel</button>
+	      <button type="save" class="btn">Save</button>
+		  <button type="submit" class="btn">Submit</button>
+	 
+	   <center>
+		 </div>
+
+
+        </form>
+
+    </body>
+</html>

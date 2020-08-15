@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+           <title>Neighbourhood Approval </title>
+
+    <style>
+    @import url('httpss://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+}
+
+.signup-form {
+    font-family: "Roboto", sans-serif;
+    width:650px;
+    margin:30px auto;
+    background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+    border-radius: 10px;
+}
+
+.form-header  {
+    background-color: #EFF0F1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.form-header h1 {
+    font-size: 30px;
+    text-align:center;
+    color:#666;
+    padding:20px 0;
+    border-bottom:1px solid #cccccc;
+}
+
+/*---------------------------------------*/
+/* Form Body */
+/*---------------------------------------*/
+.form-body {
+    padding:10px 40px;
+    color:#666;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-body .label-title {
+    color:#1BBA93;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.form-body .form-input {
+        font-size: 17px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 34px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #333333;
+        text-align: left;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        background: white;
+        outline: none;
+}
+
+
+
+.horizontal-group .left{
+    float:left;
+    width:49%;
+}
+
+.horizontal-group .right{
+    float:right;
+    width:49%;
+}
+
+input[type="file"] {
+ outline: none;
+ cursor:pointer;
+ font-size: 17px;
+}
+
+#range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+
+
+::-webkit-input-placeholder {
+ color:#d9d9d9;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.form-footer {
+ clear:both;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.signup-form .form-footer  {
+  background-color: #EFF0F1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding:10px 40px;
+  text-align: right;
+  border-top: 1px solid #cccccc;
+}
+
+.form-footer span {
+  float:left;
+  margin-top: 10px;
+  color:#999;
+  font-style: italic;
+  font-weight: thin;
+}
+
+.btn {
+   display:inline-block;
+   padding:10px 20px;
+   background-color: #1BBA93;
+   font-size:17px;
+   border:none;
+   border-radius:5px;
+   color:#bcf5e7;
+   cursor:pointer;
+}
+
+.btn:hover {
+  background-color: #169c7b;
+  color:white;
+}
+    </style>
+        </head>
+    <body>
+
+        <form class="signup-form" action="/register" method="post">
+
+    <!-- form header -->
+    <div class="form-header">
+            <h1>Neighbourhood Approval Notification</h1>
+    </div>
+
+    <!-- form body -->
+    <div class="form-body">
+	
+	  
+	  <div class="horizontal-group">
+ 
+ <frameset cols = "50%,50%">
+ 
+ <frame name = "left" />
+ <div class="form-group left">
+ 
+<div class="form-group">
+              <label for="neighbourhood" class ="label-title"> Neighbourhood Type:</label>
+                  <select name="neighbourhood" id="neighbourhood" >
+                  <option value="grocery">Grocery Shop</option>
+                  <option value="veg">Vegetable Shop</option>
+				   <option value="parlour">Saloon/Parlour</option>
+                  <option value="variety">Variety Shop</option>
+				  <option value="cake">Cake Shop</option>
+				  <option value="gas">Gas Agency</option>
+				  <option value="maid">Mad Agency</option>
+				  <option value="plumber">Plumber Agency</option>
+                  </select>
+</div>
+
+ <label class="label-title">Neighbourhood Name:</label>
+<label for="neighbourhoodname" id ="neighbourhoodname">Ideal Fresh</label>
+<br>
+
+<label class="label-title">Owner Name:</label>
+<label for="ownername" id ="ownername">Gurpreet Kaur</label>
+<br>
+<label class="label-title">Manager Name:</label>
+<label for="managername" id ="managername">Piyus Kant</label>
+<br>
+<label class="label-title"> Conact No</label>
+<label for="contactno" id ="contactno">0987654321</label>
+<br>
+<label class="label-title"> PAN:</label>
+<label for="pan" id ="pan">AOJPM3219H</label>
+<br>
+<label class="label-title"> GSTIN:</label>
+<label for="gsttin" id ="gsttin">KA098764543216799</label>
+<br>
+<label class="label-title">registration No:</label>
+<label for="regNO" id ="regNO">1234567</label>
+<br>
+<label class="label-title">Address:</label>
+<label for="add" id ="add">Marathalli, Bangalore</label>
+<br>
+<label class="label-title">Location:</label>
+<label for="location" id ="location"></label>
+<br>
+<label class="label-title">Employee:</label>
+<label for="emp" id ="emp">2</label>
+
+<br>
+</div>
+
+</div>
+
+ <frame name = "right" />
+
+ <center><div class="form-group right">
+ <img src="https://discoverhumboldt.com/images/stories/March_2020/good_neighbor_store.jpg" alt="photo" width="70"
+                 height="70" align="top">
+				 <br><br>
+ <img src="https://thumbs.dreamstime.com/z/passport-photo-portrait-asian-smiling-woman-109538764.jpg" alt="photo" width="70"
+                 height="70" align="top">
+				 <br>
+	  <label for="name" class="label-title" >Registered in App </label>
+<br>	  
+	 
+ </div>
+   </frameset></center>
+   
+<br><BR><BR><br>
+
+<div class="horizontal-group">
+
+    <div class="form-group">
+                     <h3>OnHold!!! Additional Documnets required</h3>
+			       </div>
+
+
+</div>
+    <!-- form footer -->
+    <div class="form-footer">
+     <button type="cancel" class="btn">Cancel</button>
+         <button type="save" class="btn">Save</button>
+		 <button type="submit" class="btn">Submit</button>
+		 </div>
+
+
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+           <title>Neighbourhood Notification </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+	 .color-box {
+    /*border: 1px solid green ;
+    position: absolute;
+               /  text-align: justify;
+                /*  background-color: brown;
+                   word-wrap: break-word;
+                 margin: 10px 20px auto;
+    /* top, left, bottom
+    padding: 10px 20px 30px;
+    float: left;         */
+    text-align: justify;
+        max-width: 500px;
+    height: 100px;
+    background-color: powderblue;
+	border: 1px solid green
+	
+
+}
+    @import url('httpss://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+}
+
+.signup-form {
+    font-family: "Roboto", sans-serif;
+    width:650px;
+    margin:30px auto;
+    background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+    border-radius: 10px;
+}
+
+.form-header  {
+    background-color: #EFF0F1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.form-header h1 {
+    font-size: 30px;
+    text-align:center;
+    color:#666;
+    padding:20px 0;
+    border-bottom:1px solid #cccccc;
+}
+
+/*---------------------------------------*/
+/* Form Body */
+/*---------------------------------------*/
+.form-body {
+    padding:10px 40px;
+    color:#666;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-body .label-title {
+    color:#1BBA93;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.form-body .form-input {
+        font-size: 17px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 34px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #333333;
+        text-align: left;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        background: white;
+        outline: none;
+}
+
+
+
+.horizontal-group .left{
+    float:left;
+    width:49%;
+}
+
+.horizontal-group .right{
+    float:right;
+    width:49%;
+}
+
+input[type="file"] {
+ outline: none;
+ cursor:pointer;
+ font-size: 17px;
+}
+
+#range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+
+
+::-webkit-input-placeholder {
+ color:#d9d9d9;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.form-footer {
+ clear:both;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.signup-form .form-footer  {
+  background-color: #EFF0F1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding:10px 40px;
+  text-align: right;
+  border-top: 1px solid #cccccc;
+}
+
+.form-footer span {
+  float:left;
+  margin-top: 10px;
+  color:#999;
+  font-style: italic;
+  font-weight: thin;
+}
+
+.btn {
+   display:inline-block;
+   padding:10px 20px;
+   background-color: #1BBA93;
+   font-size:17px;
+   border:none;
+   border-radius:5px;
+   color:#bcf5e7;
+   cursor:pointer;
+}
+
+.btn:hover {
+  background-color: #169c7b;
+  color:white;
+}
+#box8 {
+            padding: 10px;
+            flex-grow: 1;
+            border: solid 1px black
+        }
+		
+/****************************************
+        VERSION ONE
+        
+        
+        .content{
+            display: grid;
+            max-width: 90%;
+            margin: 1rem auto;
+            border: 1px solid red;
+            grid-template-areas: "A A B B C C"
+                                "D D D E E E";
+            grid-column-gap: 2rem;
+        }
+        .content div{
+            padding: 1rem;
+        }
+        .A{
+            grid-area: A;
+            background-color: hsl(60, 30%, 90%);
+        }
+        .B{
+            grid-area: B;
+            background-color: hsl(120, 30%, 90%);
+        }
+                
+        .D{
+            grid-area: D;
+            background-color: hsl(240, 30%, 90%);
+        }
+        
+        ****************************************/
+        
+        /****************************************
+        VERSION TWO
+        ****************************************/
+        
+        .content{
+            display: grid;
+            max-width: 90%;
+            margin: 1rem auto;
+            border: 1px solid red;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: auto;
+            grid-column-gap: 2rem;
+        }
+        .content div{
+            padding: 1rem;
+        }
+        .A{
+            grid-column: 1 / span 4;
+            background-color: hsl(60, 30%, 90%);
+        }
+        .B{
+            grid-column: 5 / span 3;
+           
+        }
+       
+        
+        .D{
+            grid-column: 1 / span 6;
+            background-color: hsl(240, 30%, 90%);
+        }
+		
+    </style>
+        </head>
+    <body>
+
+        <form class="signup-form" action="/register" method="post">
+
+    <!-- form header -->
+    <div class="form-header">
+            <h1>Neighbourhood Notification - Granted for Pass Code</h1>
+    </div>
+
+       <!-- form body -->
+    <div class="form-body">
+	  <div class="horizontal-group">
+ 
+ <div class="form-group ">
+<label class="label-title">Added To Society:</label>
+<label for="name" id ="name">Shriram Shreyas</label>
+  <br>
+  
+  <label class="label-title">Pass Code:</label>
+<label for="passcode" id ="passcode">Granted</label>
+  <br>
+   <br>
+	 
+ 
+ <label class="label-title">Neighbour pass code will be genertaed as per Pass Type and can be used as per Daily Validity Time </label>
+<br>
+<br>
+
+
+</div>
+
+<main class="content">
+            <div class="third D">
+               
+             <label class="label-title">Neighbourhood Type:</label>
+<label for="neighbourhoodtype" id ="neighbourhoodtype">Grocery Shop</label>
+<br>
+
+ <label class="label-title">Neighbourhood Name:</label>
+<label for="neighbourhoodname" id ="neighbourhoodname">Ideal Fresh</label>
+<br>
+
+ <label class="label-title">Pass Type:</label>
+<label for="passtype" id ="passtype">Daily</label>
+<br>
+<label class="label-title">Daily Validity Time:</label>
+<label for="time" id ="time">8:30 AM To 8:30PM</label>
+<br>
+<center>
+
+
+            </div>
+             
+  </main>
+
+<br>
+    <!-- form footer -->
+    <div class="form-footer">
+	<center>
+     <button type="ok" class="btn">Ok</button>
+	 
+	   <center>
+		 </div>
+
+
+        </form>
+
+    </body>
+</html>

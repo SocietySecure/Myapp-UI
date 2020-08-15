@@ -8,11 +8,8 @@
   <link rel="stylesheet" href="../assets/css/style.css">
  <link rel="stylesheet" href="../assets/css/style.scss">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
             <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="../assets/js/enrollmentDetails.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 *{
@@ -437,27 +434,7 @@ nav ul li.active ul li a{
              
         </div>
 		
-		
-            <form name="enrollmentDetails" id="enrollmentDetails" class="formView">
-                <div class="form-header">
-                      <h1> Society Enrollment Approval</h1>
-                 </div>
-               
-                 <div class="horizontal-group">
-                   <table id="enrollmentTable" class="display compact stripe">
-                      <thead>
-                      <tr>
-                          <th> First Name </th>
-                          <th> Last Name </th>
-                          <th> Phone </th>
-                          <th> email </th>
-                          <th> Action </th>
-                      </tr>
-                      </thead>
-                   </table>
-                </div>
-                <form>
-        
+		<div id="content"></div>
 		
     </center>
 </body>
@@ -469,34 +446,11 @@ nav ul li.active ul li a{
   }*/
 
   $(document).ready( function() {
-
-    var enrollmentDetailsContent = '<form name="enrollmentDetails" id="enrollmentDetails" class="formView">'+
-               // '<div class="form-header">'+
-                    ' <h1> Society Enrollment Approval</h1>'+
-                    ' </div>'+
-               
-                    ' <div class="horizontal-group">'+
-                        ' <table id="enrollmentTable" class="display compact stripe">'+
-                            '  <thead>'+
-                                '<tr>'+
-                                    ' <th> First Name </th>'+
-                                    ' <th> Last Name </th>'+
-                                    '<th> Phone </th>'+
-                                    '<th> email </th>'+
-                                    ' <th> Action </th>'+
-                                    ' </tr>'+
-                                    '</thead>'+
-                                    '</table>'+
-                                    //'</div>'+
-                                    '<form>';
     $("#enrollmentDetails").click( function(event) {
 		alert("calling function");
 		$("#initialContent").hide();
 		event.preventDefault();
-        //$("#content").load("../SocietyEnrolment/SocietyEnrollmentDetails.htm #target");
-        //$("#content").load('<object data="../SocietyEnrolment/SocietyEnrollmentDetails.htm ">');
-        $("#content").load(enrollmentDetailsContent);
-        //'<object data="http://tired.com/">'
+        $("#content").load("../SocietyEnrolment/SocietyEnrollmentDetails.htm");
 
 	});
 	});
